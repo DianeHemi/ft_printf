@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/24 11:04:59 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/24 11:05:01 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 11:54:23 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 11:55:14 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int		ft_parse_flags(va_list args, char *input, int i, t_printf *flags)
 	return (i);
 }
 
-
 int		ft_parse_conv(va_list args, t_printf *flags)
 {
 	int char_count;
@@ -63,5 +62,3 @@ int		ft_parse_conv(va_list args, t_printf *flags)
 		char_count = ft_treat_perct(char_count);
 	return (char_count);
 }
-
-

@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/27 12:15:22 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/27 12:15:23 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 11:52:34 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 11:53:44 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-char	*ft_conv_base(char	*str, int len, unsigned long long nb, int base)
+char	*ft_conv_base(char *str, int len, unsigned long long nb, int base)
 {
 	while (nb != 0)
 	{
@@ -29,7 +29,7 @@ char	*ft_conv_base(char	*str, int len, unsigned long long nb, int base)
 char	*ft_ull_base(unsigned long long nb, int base)
 {
 	char				*str;
-	unsigned long long 	nb_cpy;
+	unsigned long long	nb_cpy;
 	int					len;
 
 	len = 0;
