@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/27 19:46:32 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/27 19:46:33 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 15:26:20 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 15:28:28 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_treat_width(t_printf *flags, int min, int has_zero)
 
 	char_count = 0;
 	len = flags->width;
-	if  (flags->dot >= len || len == 0 || min == len || len < min)
+	if (flags->dot >= len || len == 0 || min == len || len < min)
 		return (char_count);
 	while (len > min)
 	{
@@ -46,18 +46,14 @@ int		ft_assembly(t_printf *flags, char *str)
 	{
 		while (dot > 0 && dot > len)
 		{
-			ft_putchar('0');
-			char_count++;
+			char_count = ft_write_input('0', char_count);
 			dot--;
 		}
 		char_count = ft_putstr(str, char_count);
 		return (char_count);
 	}
 	else if (flags->width > 0 && str[0] == '0' && flags->dot == 0)
-	{
-		ft_putchar(' ');
-		char_count++;
-	}
+		char_count = ft_write_input(' ', char_count);
 	else
 		char_count = ft_putstr(str, char_count);
 	return (char_count);

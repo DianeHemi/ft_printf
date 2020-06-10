@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 18:51:33 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/25 18:51:38 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 14:21:51 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 15:56:34 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
-
-
 
 static int	ft_ptr_assembly(t_printf *flags, char *str)
 {
@@ -23,33 +21,24 @@ static int	ft_ptr_assembly(t_printf *flags, char *str)
 	char_count = 0;
 	char_count = ft_putstr("0x", char_count);
 	if (flags->width > 0 && flags->zero == 1 && flags->dot < 0)
-	{
-		char_count = ft_putstr(str, char_count);
-		return (char_count);
-	}
-	len = ft_strlen(str) + 2;
+		return (ft_putstr(str, char_count));
+	len = ft_strlen(str); //Anciennement +2 ici, a check
 	dot = flags->dot;
 	if (flags->dot > 0)
 	{
 		while (dot > 0 && dot > len)
 		{
-			ft_putchar('0');
-			char_count++;
+			char_count = ft_write_input('0', char_count);
 			dot--;
 		}
-		char_count = ft_putstr(str, char_count);
-		return (char_count);
+		return (ft_putstr(str, char_count));
 	}
 	else if (flags->width > 0 && str[0] == '0' && flags->dot == 0)
-	{
-		ft_putchar('0');
-		char_count++;
-	}
+		char_count = ft_write_input('0', char_count);
 	else
 		char_count = ft_putstr(str, char_count);
 	return (char_count);
 }
-
 
 static int	ft_ptr_errors(t_printf *flags, int ptr, int *char_count)
 {
@@ -78,7 +67,7 @@ int			ft_treat_ptr(va_list args, t_printf *flags, int char_count)
 		flags->dot = ft_strlen(str);
 	if (flags->minus == 1)
 		char_count += ft_ptr_assembly(flags, str);
-	char_count += ft_treat_width(flags, flags->dot + 2, flags->zero);		
+	char_count += ft_treat_width(flags, flags->dot + 2, flags->zero);
 	if (flags->minus == 0)
 		char_count += ft_ptr_assembly(flags, str);
 	free(str);

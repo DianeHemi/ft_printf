@@ -6,7 +6,7 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 12:47:58 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 12:56:21 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/10 14:39:34 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 void	ft_putchar(char c)
 {
 	write(1, &c, 1);
+}
+
+int		ft_write_input(char c, int char_count)
+{
+	write(1, &c, 1);
+	char_count += 1;
+	return (char_count);
 }
 
 int		ft_treat_char(va_list args, int char_count, t_printf *flags)

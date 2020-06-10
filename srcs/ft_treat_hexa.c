@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 18:54:33 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/25 18:54:35 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 14:02:17 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 15:35:46 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,7 @@ static int	ft_hexa_errors(t_printf *flags, unsigned int nb, int *char_count)
 		}
 		else
 		{
-			write(1, " ", 1);
-			*char_count += 1;
+			*char_count = ft_write_input(' ', *char_count);
 			return (1);
 		}
 	}
@@ -45,8 +44,7 @@ static int	ft_hexa_errors(t_printf *flags, unsigned int nb, int *char_count)
 	{
 		while (flags->width > 0)
 		{
-			ft_putchar(' ');
-			*char_count += 1;
+			*char_count = ft_write_input(' ', *char_count);
 			flags->width--;
 		}
 		return (1);
@@ -54,9 +52,10 @@ static int	ft_hexa_errors(t_printf *flags, unsigned int nb, int *char_count)
 	return (0);
 }
 
-int			ft_treat_hexa(va_list args, t_printf *flags, int char_count, int type)
+int			ft_treat_hexa(va_list args, t_printf *flags,
+		int char_count, int type)
 {
-	char 			*hexa;
+	char			*hexa;
 	unsigned int	nb;
 
 	nb = va_arg(args, unsigned int);
@@ -69,13 +68,11 @@ int			ft_treat_hexa(va_list args, t_printf *flags, int char_count, int type)
 		hexa = ft_str_tolower(hexa);
 	if (flags->dot >= 0 && (size_t)flags->dot < ft_strlen(hexa))
 		flags->dot = ft_strlen(hexa);
-	//
 	if (flags->minus == 1)
 		char_count += ft_assembly(flags, hexa);
 	char_count += ft_treat_width(flags, flags->dot, flags->zero);
 	if (flags->minus == 0)
 		char_count += ft_assembly(flags, hexa);
-	//
 	free(hexa);
 	return (char_count);
 }

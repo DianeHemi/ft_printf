@@ -6,14 +6,14 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 11:55:41 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 12:39:39 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/10 14:24:42 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 #include "../libft/libft.h"
 
-void		ft_init_flags(t_printf *flags)
+void	ft_init_flags(t_printf *flags)
 {
 	flags->minus = 0;
 	flags->zero = 0;
@@ -24,14 +24,7 @@ void		ft_init_flags(t_printf *flags)
 	flags->conv = 0;
 }
 
-static int	ft_write_input(char c, int char_count)
-{
-	write(1, &c, 1);
-	char_count += 1;
-	return (char_count);
-}
-
-int			ft_read_input(va_list args, const char *input)
+int		ft_read_input(va_list args, const char *input)
 {
 	int			i;
 	int			char_count;
@@ -60,7 +53,7 @@ int			ft_read_input(va_list args, const char *input)
 	return (char_count);
 }
 
-int			ft_printf(const char *input, ...)
+int		ft_printf(const char *input, ...)
 {
 	va_list		args;
 	int			char_count;

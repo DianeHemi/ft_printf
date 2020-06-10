@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 18:40:07 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/25 18:40:22 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 14:57:42 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 15:24:33 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char		*ft_strndup(const char *s, int len)
 
 int			ft_putstr(char *str, int char_count)
 {
-	int i;
+	int		i;
 
 	i = 0;
 	if (!str)
@@ -47,8 +47,8 @@ int			ft_putstr(char *str, int char_count)
 
 static int	ft_str_assembly(t_printf *flags, char *str)
 {
-	int 	char_count;
-	int 	len;
+	int		char_count;
+	int		len;
 	int		len_str;
 
 	char_count = 0;
@@ -66,7 +66,7 @@ static int	ft_str_assembly(t_printf *flags, char *str)
 	return (char_count);
 }
 
-static int	ft_str_errors(t_printf *flags, int *char_count)
+static int	ft_str_errors(t_printf *flags, int *char_count, char *str)
 {
 	if (flags->dot == 0 && flags->width < 1)
 	{
@@ -89,29 +89,25 @@ static int	ft_str_errors(t_printf *flags, int *char_count)
 int			ft_treat_str(va_list args, t_printf *flags, int char_count)
 {
 	char	*str;
+	int		need_free;
 
 	str = va_arg(args, char*);
+	need_free = 0;
 	if (!str)
 		str = "(null)";
-	if (ft_str_errors(flags, &char_count))
+	if (ft_str_errors(flags, &char_count, str))
 		return (char_count);
 	if (flags->dot > 0 && (size_t)flags->dot < ft_strlen(str))
 	{
 		str = ft_strndup(str, flags->dot);
-		if (flags->minus == 1)
-			char_count = ft_putstr(str, char_count);
-		char_count += ft_treat_width(flags, (ft_strlen(str)), 0);
-		if (flags->minus == 0)
-			char_count = ft_putstr(str, char_count);
+		need_free = 1;
+	}
+	if (flags->minus == 1)
+		char_count = ft_putstr(str, char_count);
+	char_count += ft_treat_width(flags, (ft_strlen(str)), 0);
+	if (flags->minus == 0)
+		char_count = ft_putstr(str, char_count);
+	if (need_free == 1)
 		free(str);
-	}
-	else
-	{
-		if (flags->minus == 1)
-			char_count = ft_putstr(str, char_count);
-		char_count += ft_str_assembly(flags, str);
-		if (flags->minus == 0)
-			char_count = ft_putstr(str, char_count);
-	}
 	return (char_count);
 }

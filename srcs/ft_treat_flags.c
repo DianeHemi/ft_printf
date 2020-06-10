@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/25 11:07:38 by dchampda          #+#    #+#             */
-/*   Updated: 2020/05/27 12:17:04 by dchampda         ###   ########.fr       */
+/*   Created: 2020/06/10 14:00:10 by dchampda          #+#    #+#             */
+/*   Updated: 2020/06/10 14:01:00 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	ft_flag_minus(t_printf *flags)
 	flags->zero = 0;
 }
 
-int			ft_flag_dot(char *input, int pos, t_printf *flags, va_list args)
+int		ft_flag_dot(char *input, int pos, t_printf *flags, va_list args)
 {
 	int i;
 
@@ -42,7 +42,7 @@ int			ft_flag_dot(char *input, int pos, t_printf *flags, va_list args)
 	return (i);
 }
 
-int	ft_flag_digit(t_printf *flags, char c)
+int		ft_flag_digit(t_printf *flags, char c)
 {
 	if (flags->star == 1)
 		return (0);

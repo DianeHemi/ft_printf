@@ -7,24 +7,24 @@ int	main()
 	int *b;
 	long c;
 
-	/*
-
+	
+/*
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- CHARS ---\n");
 
-	b = ft_printf("%5c%3c\n", 'c', 'd');
+	b = ft_printf("abcd %5c%3c", 'c', 'd');
 	printf("-> %d\n", b);
-	a = printf("%5c%3c\n", 'c', 'd');
+	a = printf("abcd %5c%3c", 'c', 'd');
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%*c\n", 5, 'H');
+	b = ft_printf("%*c", 5, 'H');
 	printf("-> %d\n", b);
-	a = printf("%*c\n", 5, 'H');
+	a = printf("%*c", 5, 'H');
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%*c%c-%c\n", -10, 'c', 'r', 't');
+	b = ft_printf("%*c%c-%c", -10, 'c', 'r', 't');
 	printf("-> %d\n", b);
-	a = printf("%*c%c-%c\n", -10, 'c', 'r', 't');
+	a = printf("%*c%c-%c", -10, 'c', 'r', 't');
 	printf("-> %d \n", a);
 ft_printf("\n");
 	b = ft_printf("%c", 'a');
@@ -80,28 +80,28 @@ ft_printf("----------------------------------------------------------\n");
 	printf("O: Doit afficher du vide -> '%.s'\n", "");
 	ft_printf("\n");
 
-	
+*/	
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- DOUBLE POURCENT ---\n");
 
-	b = ft_printf("%%\n");
+	b = ft_printf("%%");
 	printf("-> %d\n", b);
-	a = printf("%%\n");
+	a = printf("%%");
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%-020%\n");
+	b = ft_printf("%-020%");
 	printf("-> %d\n", b);
-	a = printf("%-020%\n");
+	a = printf("%-020%");
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("a%%a\n", 25);
+	b = ft_printf("a%%a", 25);
 	printf("-> %d\n", b);
-	a = printf("a%%a\n", 25);
+	a = printf("a%%a", 25);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%%-%%-%d%% %%\n", 5);
+	b = ft_printf("%%-%%-%d%% %%", 5);
 	printf("-> %d\n", b);
-	a = printf("%%-%%-%d%% %%\n", 5);
+	a = printf("%%-%%-%d%% %%", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
 
@@ -110,56 +110,56 @@ ft_printf("\n");
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- POINTEURS ---\n");
 
-	b = ft_printf("%-22.5p\n", &a);
+	b = ft_printf("%-22.5p", &a);
 	printf("-> %d\n", b);
-	a = printf("%-22.5p\n", &a);
+	a = printf("%-22.5p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%022.5p\n", &b);
+	b = ft_printf("%022.5p", &b);
 	printf("-> %d\n", b);
-	a = printf("%022.5p\n", &b);
+	a = printf("%022.5p", &b);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%022p\n", &a);
+	b = ft_printf("%022p", &a);
 	printf("-> %d\n", b);
-	a = printf("%022p\n", &a);
+	a = printf("%022p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%22p\n", &a);
+	b = ft_printf("%22p", &a);
 	printf("-> %d\n", b);
-	a = printf("%22p\n", &a);
+	a = printf("%22p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%-22p\n", &a);
+	b = ft_printf("%-22p", &a);
 	printf("-> %d\n", b);
-	a = printf("%-22p\n", &a);
+	a = printf("%-22p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%5.22p\n", &a);
+	b = ft_printf("%5.22p", &a);
 	printf("-> %d\n", b);
-	a = printf("%5.22p\n", &a);
+	a = printf("%5.22p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%23.22p\n", &a);
+	b = ft_printf("%23.22p", &a);
 	printf("-> %d\n", b);
-	a = printf("%23.22p\n", &a);
+	a = printf("%23.22p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%5.3p\n", &a);
+	b = ft_printf("%5.3p", &a);
 	printf("-> %d\n", b);
-	a = printf("%5.3p\n", &a);
+	a = printf("%5.3p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%23.3p\n", &a);
+	b = ft_printf("%23.3p", &a);
 	printf("-> %d\n", b);
-	a = printf("%23.3p\n", &a);
+	a = printf("%23.3p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-*/	b = ft_printf("%p", 0);
+	b = ft_printf("%p", 0);
 	printf("-> %d\n", b);
 	printf("0x0-> 3\n");
 ft_printf("\n");
-/*	b = ft_printf("%-*p", 10, (void *)209590960);
+	b = ft_printf("%-*p", 10, (void *)209590960);
 	printf("-> %d\n", b);
 	a = printf("%-*p", 10, (void *)209590960);
 	printf("-> %d \n", a);
@@ -175,7 +175,7 @@ ft_printf("\n");
 	printf("-> %d \n", a);
 ft_printf("\n");
 
-
+/*
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- INTS ---\n");
 
@@ -773,44 +773,44 @@ ft_printf("\n");
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- UNSIGNED INTS ---\n");
 
-	b = ft_printf("%-12.5u\n", 5);
+	b = ft_printf("%-12.5u", 5);
 	printf("-> %d\n", b);
-	a = printf("%-12.5u\n", 5);
+	a = printf("%-12.5u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%012.5u\n", 5);
+	b = ft_printf("%012.5u", 5);
 	printf("-> %d\n", b);
-	a = printf("%012.5u\n", 5);
+	a = printf("%012.5u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%012u\n", 5);
+	b = ft_printf("%012u", 5);
 	printf("-> %d\n", b);
-	a = printf("%012u\n", 5);
+	a = printf("%012u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%12u\n", 5);
+	b = ft_printf("%12u", 5);
 	printf("-> %d\n", b);
-	a = printf("%12u\n", 5);
+	a = printf("%12u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%-12u\n", 5);
+	b = ft_printf("%-12u", 5);
 	printf("-> %d\n", b);
-	a = printf("%-12u\n", 5);
+	a = printf("%-12u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%05.12u\n", 5);
+	b = ft_printf("%05.12u", 5);
 	printf("-> %d\n", b);
-	a = printf("%05.12u\n", 5);
+	a = printf("%05.12u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%13.12u\n", 5);
+	b = ft_printf("%13.12u", 5);
 	printf("-> %d\n", b);
-	a = printf("%13.12u\n", 5);
+	a = printf("%13.12u", 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%*u\n", -10, 5);
+	b = ft_printf("%*u", -10, 5);
 	printf("-> %d\n", b);
-	a = printf("%*u\n", -10, 5);
+	a = printf("%*u", -10, 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
 	b = ft_printf("%*u", -1, 8);
@@ -854,7 +854,7 @@ ft_printf("\n");
 	printf("-> %d \n", a);
 ft_printf("\n");
 
-
+*/
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- HEXA ---\n");
 
@@ -894,9 +894,9 @@ ft_printf("\n");
 	a = printf("%13.12x", -125);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%*x\n", -10, 5);
+	b = ft_printf("%*x", -10, 5);
 	printf("-> %d\n", b);
-	a = printf("%*x\n", -10, 5);
+	a = printf("%*x", -10, 5);
 	printf("-> %d \n", a);
 ft_printf("\n");
 	b = ft_printf("%*x", -1, 8);
@@ -1162,7 +1162,7 @@ ft_printf("\n");
 
 
 
-*/
+
 	ft_printf("--- ERREURS ---\n");
 	b = ft_printf("%-2s", NULL);
 	printf("-> %d\n", b);
