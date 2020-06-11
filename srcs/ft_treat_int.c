@@ -20,8 +20,7 @@ static int	ft_int_errors(t_printf *flags, int nb, int *char_count)
 			return (1);
 		else
 		{
-			write(1, " ", 1);
-			*char_count += 1;
+			*char_count = ft_write_input(' ', *char_count);
 			return (1);
 		}
 	}
@@ -29,8 +28,7 @@ static int	ft_int_errors(t_printf *flags, int nb, int *char_count)
 	{
 		while (flags->width > 0)
 		{
-			ft_putchar(' ');
-			*char_count += 1;
+			*char_count = ft_write_input(' ', *char_count);
 			flags->width--;
 		}
 		return (1);
