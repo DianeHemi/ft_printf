@@ -66,7 +66,7 @@ static int	ft_str_assembly(t_printf *flags, char *str)
 	return (char_count);
 }
 
-static int	ft_str_errors(t_printf *flags, int *char_count, char *str)
+static int	ft_str_errors(t_printf *flags, int *char_count)
 {
 	if (flags->dot == 0 && flags->width < 1)
 	{
@@ -95,7 +95,7 @@ int			ft_treat_str(va_list args, t_printf *flags, int char_count)
 	need_free = 0;
 	if (!str)
 		str = "(null)";
-	if (ft_str_errors(flags, &char_count, str))
+	if (ft_str_errors(flags, &char_count))
 		return (char_count);
 	if (flags->dot > 0 && (size_t)flags->dot < ft_strlen(str))
 	{
@@ -104,7 +104,7 @@ int			ft_treat_str(va_list args, t_printf *flags, int char_count)
 	}
 	if (flags->minus == 1)
 		char_count = ft_putstr(str, char_count);
-	char_count += ft_treat_width(flags, (ft_strlen(str)), 0);
+	char_count += ft_str_assembly(flags, str);
 	if (flags->minus == 0)
 		char_count = ft_putstr(str, char_count);
 	if (need_free == 1)
