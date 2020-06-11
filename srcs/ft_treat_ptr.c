@@ -22,7 +22,7 @@ static int	ft_ptr_assembly(t_printf *flags, char *str)
 	char_count = ft_putstr("0x", char_count);
 	if (flags->width > 0 && flags->zero == 1 && flags->dot < 0)
 		return (ft_putstr(str, char_count));
-	len = ft_strlen(str); //Anciennement +2 ici, a check
+	len = ft_strlen(str);
 	dot = flags->dot;
 	if (flags->dot > 0)
 	{

@@ -17,7 +17,7 @@ static int	ft_int_errors(t_printf *flags, int nb, int *char_count)
 	if (flags->dot == 0 && nb == 0 && flags->width < 2)
 	{
 		if (flags->width < 1)
-			return (1); //write(1, "", 0);
+			return (1);
 		else
 		{
 			write(1, " ", 1);
