@@ -12,8 +12,12 @@
 
 #include "../includes/ft_printf.h"
 
-int	ft_treat_perct(int char_count)
+int	ft_treat_perct(t_printf *flags, int char_count)
 {
-	ft_putchar('%');
-	return (char_count + 1);
+	if (flags->minus == 1)	
+		char_count = ft_write_input('%', char_count);
+	char_count += ft_treat_width(flags, 1, flags->zero);
+	if (flags->minus == 0)	
+		char_count = ft_write_input('%', char_count);
+	return (char_count);
 }

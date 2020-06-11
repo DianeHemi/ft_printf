@@ -31,7 +31,7 @@ int		ft_flag_dot(char *input, int pos, t_printf *flags, va_list args)
 	else
 	{
 		flags->dot = 0;
-		while (ft_strchr("123456789", input[i]))
+		while (ft_strchr("0123456789", input[i]))
 		{
 			flags->dot = (flags->dot * 10) + (input[i] - '0');
 			i++;

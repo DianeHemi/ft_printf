@@ -21,7 +21,7 @@ int		ft_parse_flags(va_list args, char *input, int i, t_printf *flags)
 			flags->zero = 1;
 		if (input[i] == '-')
 			ft_flag_minus(flags);
-		if (ft_strchr("123456789", input[i]) && flags->dot == -1)
+		if (ft_strchr("0123456789", input[i]) && flags->dot == -1)
 			ft_flag_digit(flags, input[i]);
 		if (input[i] == '*' && flags->dot == -1)
 			ft_flag_width(args, flags);
@@ -59,6 +59,6 @@ int		ft_parse_conv(va_list args, t_printf *flags)
 	else if (flags->conv == 'X')
 		char_count = ft_treat_hexa(args, flags, char_count, 0);
 	else if (flags->conv == '%')
-		char_count = ft_treat_perct(char_count);
+		char_count = ft_treat_perct(flags, char_count);
 	return (char_count);
 }
