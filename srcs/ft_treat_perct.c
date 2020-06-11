@@ -14,10 +14,10 @@
 
 int	ft_treat_perct(t_printf *flags, int char_count)
 {
-	if (flags->minus == 1)	
+	if (flags->minus == 1)
 		char_count = ft_write_input('%', char_count);
 	char_count += ft_treat_width(flags, 1, flags->zero);
-	if (flags->minus == 0)	
+	if (flags->minus == 0)
 		char_count = ft_write_input('%', char_count);
 	return (char_count);
 }
