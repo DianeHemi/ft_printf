@@ -135,9 +135,9 @@ ft_printf("\n");
 	a = printf("%-22p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
-	b = ft_printf("%5.22p", &a);
+	b = ft_printf("%5.30p", &a);
 	printf("-> %d\n", b);
-	a = printf("%5.22p", &a);
+	a = printf("%5.30p", &a);
 	printf("-> %d \n", a);
 ft_printf("\n");
 	b = ft_printf("%23.22p", &a);
@@ -184,6 +184,11 @@ ft_printf("----------------------------------------------------------\n");
 	a = printf("%i", 8);
 	printf("-> %d \n", a);
 	ft_printf("\n");
+ft_printf("\n");
+	b = ft_printf("%0012d", 5);
+	printf("-> %d\n", b);
+	a = printf("%0012d", 5);
+	printf("-> %d \n", a);
 ft_printf("\n");
 	b = ft_printf("%d", -12);
 	printf("-> %d\n", b);
@@ -1212,7 +1217,13 @@ ft_printf("\n");
 	printf("-> %d\n", b);
 	printf("(nul-> 4\n");
 ft_printf("\n");
+	b = ft_printf("%12.3s", NULL);
+	printf("-> %d\n", b);
+	a = printf("%12.3s", NULL);
+	printf("-> %d \n", a);
 ft_printf("\n");
+ft_printf("\n");
+
 
 	return (0);
 }

@@ -48,7 +48,7 @@ int				ft_treat_char(va_list args, int char_count, t_printf *flags);
 int				ft_treat_str(va_list args, t_printf *flags, int char_count);
 int				ft_treat_int(va_list args, t_printf *flags, int char_count);
 int				ft_treat_uint(va_list args, t_printf *flags, int char_count);
-int				ft_treat_perct(int char_count);
+int				ft_treat_perct(t_printf *flags, int char_count);
 int				ft_treat_ptr(va_list args, t_printf *flags, int char_count);
 int				ft_treat_hexa(va_list args, t_printf *flags,
 			int char_count, int type);
