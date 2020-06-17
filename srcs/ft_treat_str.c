@@ -6,7 +6,7 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 14:57:42 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 15:24:33 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/17 16:32:33 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,10 @@ static int	ft_str_assembly(t_printf *flags, char *str)
 		len_str = 0;
 	while (len - len_str > 0)
 	{
+		if (flags->zero == 0)
 		ft_putchar(' ');
+		else
+			ft_putchar('0');
 		char_count++;
 		len--;
 	}
