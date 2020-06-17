@@ -6,7 +6,7 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/01 18:46:09 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 15:34:52 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/17 15:49:07 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct	s_printf
 }				t_printf;
 
 int				ft_printf(const char *input, ...);
-int				ft_read_input(va_list args, const char *input);
+int				ft_read_input(va_list args, const char *input, int char_count);
 
 void			ft_init_flags(t_printf *flags);
 int				ft_parse_flags(va_list args, char *input, int i,
