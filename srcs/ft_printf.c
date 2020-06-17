@@ -6,7 +6,7 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 11:55:41 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 14:24:42 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/17 15:48:44 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,12 @@ void	ft_init_flags(t_printf *flags)
 	flags->conv = 0;
 }
 
-int		ft_read_input(va_list args, const char *input)
+int		ft_read_input(va_list args, const char *input, int char_count)
 {
 	int			i;
-	int			char_count;
 	t_printf	*flags;
 
 	i = 0;
-	char_count = 0;
 	if (!(flags = (t_printf*)malloc(sizeof(t_printf))))
 		return (-1);
 	while (input[i])
@@ -42,6 +40,8 @@ int		ft_read_input(va_list args, const char *input)
 		{
 			ft_init_flags(flags);
 			i = ft_parse_flags(args, (char *)input, ++i, flags);
+			if (flags->conv == 0)
+				break ;
 			if (ft_strchr("cspdiuxX%", input[i]))
 				char_count += ft_parse_conv(args, flags);
 			else if (input[i])
@@ -62,7 +62,7 @@ int		ft_printf(const char *input, ...)
 	if (!input)
 		return (-1);
 	va_start(args, input);
-	char_count = ft_read_input(args, input);
+	char_count = ft_read_input(args, input, char_count);
 	va_end(args);
 	return (char_count);
 }

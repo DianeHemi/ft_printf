@@ -1222,6 +1222,43 @@ ft_printf("\n");
 	a = printf("%12.3s", NULL);
 	printf("-> %d \n", a);
 ft_printf("\n");
+	b = ft_printf("Texte suivi d'un %");
+	printf("-> %d\n", b);
+	a = printf("Texte suivi d'un %");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%p", NULL);
+	printf("-> %d\n", b);
+	a = printf("%p", NULL);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%5");
+	printf("-> %d\n", b);
+	a = printf("%5");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%-5");
+	printf("-> %d\n", b);
+	a = printf("%-5");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%05");
+	printf("-> %d\n", b);
+	a = printf("%05");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%-05");
+	printf("-> %d\n", b);
+	a = printf("%-05");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%5.p", NULL);
+	printf("-> %d\n", b);
+	a = printf("%5.p", NULL);
+	printf("-> %d \n", a);
+ft_printf("\n");
+
+
 ft_printf("\n");
 
 
