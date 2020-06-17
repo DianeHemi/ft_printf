@@ -1257,6 +1257,11 @@ ft_printf("\n");
 	a = printf("%5.p", NULL);
 	printf("-> %d \n", a);
 ft_printf("\n");
+	b = ft_printf("%09s", "hi low");
+	printf("-> %d\n", b);
+	a = printf("%09s", "hi low");
+	printf("-> %d \n", a);
+ft_printf("\n");
 
 
 ft_printf("\n");
