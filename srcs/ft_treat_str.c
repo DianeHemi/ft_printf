@@ -60,7 +60,7 @@ static int	ft_str_assembly(t_printf *flags, char *str)
 	while (len - len_str > 0)
 	{
 		if (flags->zero == 0)
-		ft_putchar(' ');
+			ft_putchar(' ');
 		else
 			ft_putchar('0');
 		char_count++;
