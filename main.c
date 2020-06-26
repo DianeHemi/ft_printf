@@ -80,7 +80,7 @@ ft_printf("----------------------------------------------------------\n");
 	printf("O: Doit afficher du vide -> '%.s'\n", "");
 	ft_printf("\n");
 
-*/	
+	
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- DOUBLE POURCENT ---\n");
 
@@ -859,7 +859,7 @@ ft_printf("\n");
 	printf("-> %d \n", a);
 ft_printf("\n");
 
-*/
+
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- HEXA ---\n");
 
@@ -1260,6 +1260,29 @@ ft_printf("\n");
 	b = ft_printf("%09s", "hi low");
 	printf("-> %d\n", b);
 	a = printf("%09s", "hi low");
+	printf("-> %d \n", a);
+ft_printf("\n");
+*/
+
+
+	b = ft_printf("%% *.5i 42 == | %*.5i |", 4, 42);
+	printf("-> %d\n", b);
+	a = printf("%% *.5i 42 == | %*.5i |", 4, 42);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%.*o", -3, 12345);
+	printf("-> %d\n", b);
+	a = printf("%.*o", -3, 12345);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%.*o", -1, 12345);
+	printf("-> %d\n", b);
+	a = printf("%.*o", -1, 12345);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%.*o", -1, 0);
+	printf("-> %d\n", b);
+	a = printf("%.*o", -1, 0);
 	printf("-> %d \n", a);
 ft_printf("\n");
 
