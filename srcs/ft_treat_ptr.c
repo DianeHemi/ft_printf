@@ -44,8 +44,16 @@ static int	ft_ptr_errors(t_printf *flags, int ptr, int *char_count)
 {
 	if (ptr == 0 && flags->width > 0 && flags->dot == 0)
 	{
-		*char_count += ft_treat_width(flags, flags->dot + 2, 0);
-		*char_count = ft_putstr("0x", *char_count);
+		if (flags->minus == 1)
+		{
+			*char_count = ft_putstr("0x", *char_count);
+			*char_count += ft_treat_width(flags, flags->dot + 2, 0);
+		}
+		else
+		{
+			*char_count += ft_treat_width(flags, flags->dot + 2, 0);
+			*char_count = ft_putstr("0x", *char_count);
+		}
 		return (1);
 	}
 	if (flags->dot == 0 && ptr == 0)
