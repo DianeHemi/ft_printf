@@ -1265,25 +1265,15 @@ ft_printf("\n");
 */
 
 
-	b = ft_printf("%% *.5i 42 == | %*.5i |", 4, 42);
+	b = ft_printf("%-15.p", NULL);
 	printf("-> %d\n", b);
-	a = printf("%% *.5i 42 == | %*.5i |", 4, 42);
-	printf("-> %d \n", a);
+	printf("0x             ");
+	printf("-> 15\n");
 ft_printf("\n");
-	b = ft_printf("%.*o", -3, 12345);
+	b = ft_printf("%-4.4%");
 	printf("-> %d\n", b);
-	a = printf("%.*o", -3, 12345);
-	printf("-> %d \n", a);
-ft_printf("\n");
-	b = ft_printf("%.*o", -1, 12345);
-	printf("-> %d\n", b);
-	a = printf("%.*o", -1, 12345);
-	printf("-> %d \n", a);
-ft_printf("\n");
-	b = ft_printf("%.*o", -1, 0);
-	printf("-> %d\n", b);
-	a = printf("%.*o", -1, 0);
-	printf("-> %d \n", a);
+	printf("%%   ");
+	printf("-> 4 \n");
 ft_printf("\n");
 
 
