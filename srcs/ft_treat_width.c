@@ -6,7 +6,7 @@
 /*   By: dchampda <dchampda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 15:26:20 by dchampda          #+#    #+#             */
-/*   Updated: 2020/06/10 15:28:28 by dchampda         ###   ########.fr       */
+/*   Updated: 2020/06/29 13:27:01 by dchampda         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int		ft_treat_width(t_printf *flags, int min, int has_zero)
 
 	char_count = 0;
 	len = flags->width;
-	if (flags->dot >= len || len == 0 || min == len || len < min)
+	if ((flags->dot >= len && flags->conv != '%')
+			|| len == 0 || min == len || len < min)
 		return (char_count);
 	while (len > min)
 	{
