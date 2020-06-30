@@ -1222,6 +1222,11 @@ ft_printf("\n");
 	a = printf("%12.3s", NULL);
 	printf("-> %d \n", a);
 ft_printf("\n");
+	b = ft_printf("%-15.p", NULL);
+	printf("-> %d\n", b);
+	printf("0x             ");
+	printf("-> 15\n");
+ft_printf("\n");
 	b = ft_printf("Texte suivi d'un %");
 	printf("-> %d\n", b);
 	a = printf("Texte suivi d'un %");
@@ -1265,15 +1270,46 @@ ft_printf("\n");
 */
 
 
-	b = ft_printf("%-15.p", NULL);
-	printf("-> %d\n", b);
-	printf("0x             ");
-	printf("-> 15\n");
-ft_printf("\n");
+
 	b = ft_printf("%-4.4%");
 	printf("-> %d\n", b);
 	printf("%%   ");
 	printf("-> 4 \n");
+ft_printf("\n");
+	b = ft_printf("%0*.%", 2);
+	printf("-> %d\n", b);
+	a = printf("%0*.%", 2);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%0*.%", 3);
+	printf("-> %d\n", b);
+	a = printf("%0*.%", 3);
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%04.3%");
+	printf("-> %d\n", b);
+	a = printf("%04.3%");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%04.4%");
+	printf("-> %d\n", b);
+	a = printf("%04.4%");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%04%");
+	printf("-> %d\n", b);
+	a = printf("%04%");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%--4.%");
+	printf("-> %d\n", b);
+	a = printf("%--4.%");
+	printf("-> %d \n", a);
+ft_printf("\n");
+	b = ft_printf("%--4.*%", -4);
+	printf("-> %d\n", b);
+	a = printf("%--4.*%", -4);
+	printf("-> %d \n", a);
 ft_printf("\n");
 
 
