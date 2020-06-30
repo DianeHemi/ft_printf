@@ -37,8 +37,6 @@ int		ft_flag_dot(char *input, int pos, t_printf *flags, va_list args)
 			i++;
 		}
 	}
-	if (flags->dot >= 0)
-		flags->zero = 0;
 	return (i);
 }
 

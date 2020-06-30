@@ -30,6 +30,8 @@ int		ft_parse_flags(va_list args, char *input, int i, t_printf *flags)
 		if (ft_strchr("cspdiuxX%", input[i]))
 		{
 			flags->conv = input[i];
+			if (flags->dot >= 0 && flags->conv != '%')
+				flags->zero = 0;
 			if ((flags->dot > 0 && ft_strchr("diuxX", flags->conv)))
 				flags->zero = 0;
 			break ;
