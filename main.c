@@ -8,7 +8,7 @@ int	main()
 	long c;
 
 	
-/*
+
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- CHARS ---\n");
 
@@ -59,7 +59,7 @@ ft_printf("\n");
 ft_printf("\n");
 
 
-ft_printf("----------------------------------------------------------\n");
+/*ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- CAS D'ERREURS ---\n");
 
 	ft_printf("D: Doit afficher du vide -> '%.0d'\n", 0);
@@ -78,7 +78,7 @@ ft_printf("----------------------------------------------------------\n");
 	printf("O: Doit afficher du vide -> '%.0s'\n", "");
 	ft_printf("D: Doit afficher du vide -> '%.s'\n", "");
 	printf("O: Doit afficher du vide -> '%.s'\n", "");
-	ft_printf("\n");
+	ft_printf("\n");*/
 
 	
 ft_printf("----------------------------------------------------------\n");
@@ -175,7 +175,7 @@ ft_printf("\n");
 	printf("-> %d \n", a);
 ft_printf("\n");
 
-/*
+
 ft_printf("----------------------------------------------------------\n");
 	ft_printf("--- INTS ---\n");
 
@@ -1167,7 +1167,7 @@ ft_printf("\n");
 
 
 
-
+/*
 	ft_printf("--- ERREURS ---\n");
 	b = ft_printf("%-2s", NULL);
 	printf("-> %d\n", b);
@@ -1267,8 +1267,6 @@ ft_printf("\n");
 	a = printf("%09s", "hi low");
 	printf("-> %d \n", a);
 ft_printf("\n");
-*/
-
 
 
 	b = ft_printf("%-4.4%");
@@ -1310,7 +1308,7 @@ ft_printf("\n");
 	printf("-> %d\n", b);
 	a = printf("%--4.*%", -4);
 	printf("-> %d \n", a);
-ft_printf("\n");
+ft_printf("\n");*/
 
 
 ft_printf("\n");
